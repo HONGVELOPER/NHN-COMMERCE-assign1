@@ -25,6 +25,10 @@ dependencies {
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
 	runtimeOnly("mysql:mysql-connector-java")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.json:json:20171018")
+	implementation("org.apache.httpcomponents:httpclient:4.5")
+	implementation("ch.qos.logback:logback-classic:1.2.3")
+	implementation(files("lib/toast-logncrash-logback-sdk-3.0.5.jar"))
 }
 
 tasks.withType<KotlinCompile> {
