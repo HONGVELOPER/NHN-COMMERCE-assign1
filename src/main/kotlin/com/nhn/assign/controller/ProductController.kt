@@ -4,6 +4,7 @@ import com.nhn.assign.dto.PostDto
 import com.nhn.assign.model.Product
 import com.nhn.assign.service.ProductService
 import org.apache.ibatis.annotations.Delete
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
@@ -13,12 +14,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes
 class ProductController(
     private val productService: ProductService,
 ) {
+
+    private val log = LoggerFactory.getLogger(javaClass)
     @GetMapping("/product")
     fun getProductList(model: Model): String {
-        println("get all product")
+        log.error("LogNCrash Error Test")
         model.addAttribute("productList", productService.findProductList())
         return "product"
     }
+
 
     @GetMapping("/detailProduct/{id}")
     fun getProductDetail(@PathVariable(name="id") id: Int, model: Model): String {
